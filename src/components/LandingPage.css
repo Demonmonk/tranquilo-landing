@@ -1,0 +1,118 @@
+:root {
+  --teal: #0f766e;
+  --teal-2: #14b8a6;
+  --ink: #0b1720;
+  --muted: #6b7280;
+  --alt: #eefaf8;
+}
+
+/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #f7fbfb;
+  color: var(--ink);
+}
+.page { display: flex; flex-direction: column; }
+
+/* HERO */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px;              /* slightly tighter so big logo doesn’t add huge whitespace */
+  text-align: center;
+}
+.logo {
+  width: 40vw;                     /* scales with screen */
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 12px;             /* reduce vertical push */
+}
+.headline { font-size: 44px; line-height: 1.1; margin: 10px 0 6px; }
+.subhead {
+  max-width: 760px; margin: 6px auto 0; color: var(--muted); font-size: 18px;
+}
+.ctaRow { display: flex; gap: 12px; justify-content: center; margin-top: 18px; }
+.btnPrimary {
+  background: linear-gradient(90deg, var(--teal-2), var(--teal));
+  color: #fff; border: none; padding: 12px 20px; border-radius: 999px;
+  font-weight: 600; cursor: pointer;
+}
+.btnSecondary {
+  background: transparent; border: 2px solid var(--teal); color: var(--teal);
+  padding: 10px 18px; border-radius: 999px; font-weight: 600; cursor: pointer;
+}
+.sora {
+  width: 260px; margin: 28px auto 0; display: block;
+  border: 4px solid #fff; border-radius: 999px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.12);
+}
+
+/* Sections */
+.section { padding: 64px 24px; background: #fff; }
+.section.alt { background: var(--alt); }
+.h2 { font-size: 32px; margin-bottom: 12px; }
+.h3 { font-size: 20px; margin-bottom: 6px; }
+.p  { margin: 0; color: var(--muted); line-height: 1.6; }
+.center { text-align: center; }
+
+/* Story two-column */
+.twoCol {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+}
+@media (min-width: 900px) { .twoCol { grid-template-columns: 1fr 1fr; } }
+.cardImg { width: 100%; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+
+/* ---- CARDS LAYOUT ---- */
+/* Base cards (e.g., Market Research) = 3-up on desktop, responsive */
+.cards {
+  max-width: 1100px; margin: 24px auto 0;
+  display: grid; gap: 16px;
+  grid-template-columns: 1fr;               /* phones: stack */
+}
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); } /* desktop: 3-up */
+}
+
+/* How It Works: force 4 across on desktop, responsive down */
+.section.alt .cards { grid-template-columns: 1fr; }  /* phones */
+@media (min-width: 600px) {
+  .section.alt .cards { grid-template-columns: repeat(2, 1fr); } /* small tablets */
+}
+@media (min-width: 900px) {
+  .section.alt .cards { grid-template-columns: repeat(4, 1fr); } /* desktop: Talk/Listen/Meditate/Reflect all one line */
+}
+
+/* Make each card equal height */
+.card {
+  background: #fff; border-radius: 16px; padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  height: 100%; display: flex; flex-direction: column; justify-content: flex-start;
+}
+.emoji { font-size: 36px; margin-bottom: 6px; }
+
+/* Mockups grid */
+.mockups {
+  max-width: 1100px; margin: 24px auto 0;
+  display: grid; gap: 18px; justify-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) { .mockups { grid-template-columns: repeat(3, 1fr); } }
+.mock {
+  width: 260px; border-radius: 24px; box-shadow: 0 12px 36px rgba(0,0,0,.12); border: 4px solid #fff;
+}
+
+/* Waitlist */
+.waitlist {
+  max-width: 720px; margin: 16px auto 0;
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.input {
+  flex: 1; min-width: 220px; padding: 12px 14px;
+  border: 2px solid #bfeae6; border-radius: 12px;
+}
+
+/* Footer */
+.footer { background: #0f3a37; color: #e6fffb; text-align: center; padding: 28px; }
