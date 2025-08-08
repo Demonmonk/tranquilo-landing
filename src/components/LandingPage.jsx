@@ -14,7 +14,7 @@ export default function LandingPage() {
         </p>
         <div className="ctaRow">
           <button className="btnPrimary">Try the Demo</button>
-          <button className="btnSecondary">Join the Waitlist</button>
+          <a href="#waitlist" className="btnSecondary">Join the Waitlist</a>
         </div>
         <img src="/assets/sora-main.png" alt="Sora" className="sora" />
       </section>
@@ -103,7 +103,7 @@ export default function LandingPage() {
       </section>
 
       {/* WAITLIST */}
-      <section className="section alt">
+      <section id="waitlist" className="section alt">
         <h2 className="h2 center">Join the Waitlist</h2>
         <p className="p center">
           Be the first to try Tranquilo and experience a conversation that changes your day.
